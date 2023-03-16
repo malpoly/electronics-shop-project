@@ -45,7 +45,7 @@ class Item:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        self.price = int(self.pay_rate * self.price)
+        self.price *= self.pay_rate
 
     @classmethod
     def instantiate_from_csv(cls) -> None:
