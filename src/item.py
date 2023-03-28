@@ -68,3 +68,8 @@ class Item:
         """статический метод, возвращающий число из числа-строки"""
         return int(float(number))
 
+    def __add__(self, other):
+        """Сложение по количеству товара"""
+        if not isinstance(other, Item):
+            raise TypeError('Складывать можно только объекты Item и дочерние от них.')
+        return self.quantity + other.quantity
